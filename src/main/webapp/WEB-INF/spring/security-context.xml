@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="admin" authorities="admin"
+					password="admin" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<security:http use-expressions="true">
+
+		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/admin.htm" access="isAuthenticated()" />
+		<security:intercept-url pattern="/genre/add" access="isAuthenticated()" />
+		<security:intercept-url pattern="/genre/manage" access="isAuthenticated()" />		
+		<security:intercept-url pattern="/genre/delete" access="isAuthenticated()" />
+		<security:intercept-url pattern="/movie/add" access="isAuthenticated()" />
+		<security:intercept-url pattern="/movie/manage" access="isAuthenticated()" />		
+		<security:intercept-url pattern="/movie/delete" access="isAuthenticated()" />
+		<security:intercept-url pattern="/theater/add" access="isAuthenticated()" />
+		<security:intercept-url pattern="/theater/manage" access="isAuthenticated()" />		
+		<security:intercept-url pattern="/theater/delete" access="isAuthenticated()" />
+		<security:intercept-url pattern="/auditorium/add" access="isAuthenticated()" />	
+		<security:intercept-url pattern="/ticket/add" access="isAuthenticated()" />
+
+		<security:intercept-url pattern="/admin*" access="denyAll" />
+		<security:form-login  />
+		<security:csrf disabled="true" />
+	</security:http>
+
+</beans>

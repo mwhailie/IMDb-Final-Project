@@ -1,0 +1,104 @@
+/* 
+reset
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   
+*/
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+div.center-block{
+	padding: 100px 200px;
+}
+div.container{
+	margin: 10px 10px 10px 10px;
+}
+.review{
+	padding: 100px 100px;
+}
+
+.welcome{
+	padding: 100px 100px;
+}
+
+	section h3{
+		text-align:center;
+	}
+
+a{
+		color: #FFFFFF;
+	}
+
+	 .table{
+		padding: 20px 100px;
+	}
+	 .btn{
+		margin: 5px 10px;
+	}
+
+a.btn-default  {
+	color: #30A080;
+    background: white;
+    border-color: #30A080;
+}
+
+button.btn-default a  {
+	color: #30A080;
+    background: white;
+    border-color: #30A080;
+}
+button.btn-default   {
+	color: #30A080;
+    background: white;
+    border-color: #30A080;
+}
+input.btn-default {
+	color: #30A080;
+    background: white;
+    border-color: #30A080;
+}
+a.btn-primary  {
+    background: #30A080;
+    border-color: #30A080;
+}
+a.btn-primary:hover {
+    background-color: #2a8c70;
+}
+
+
+button.btn-primary  {
+    background: #30A080;
+    border-color: #30A080;
+}
+button.btn-primary:hover {
+    background-color: #2a8c70;
+    border-color: #2a8c70;
+}
+
+a.btn-primary  {
+    background: #30A080;
+    border-color: #30A080;
+}
+a.btn-primary:hover {
+    background-color: #2a8c70;
+}
+
+
+input.btn-primary  {
+    background: #30A080;
+    border-color: #30A080;
+}
+input.btn-primary:hover {
+    background-color: #2a8c70;
+    border-color: #2a8c70;
+}
+table{
+	margin: 20px 20px 20px 20px;
+}

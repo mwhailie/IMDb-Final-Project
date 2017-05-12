@@ -22,7 +22,16 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="edu.neu.webtool" />
-	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/review/*"/>
+			<mapping path="/order/*"/>
+			<beans:bean class="edu.neu.webtool.interceptor.UserInterceptor">
+			<beans:property name="errorPage" value="/webtool" />
+			</beans:bean>
+		</interceptor>
+		
+	</interceptors>
+
 	
 </beans:beans>

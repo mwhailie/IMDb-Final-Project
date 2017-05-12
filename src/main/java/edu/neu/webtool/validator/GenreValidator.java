@@ -32,8 +32,8 @@ public class GenreValidator implements Validator {
             return;//Skip the rest of the validation rules
         }        	
 		try {
-			Genre c = genreDAO.get(newGenre.getTitle());
-			if(c !=null)
+			Genre g = genreDAO.get(newGenre.getTitle());
+			if(g !=null)
 				errors.rejectValue("title", "error.invalid.genre", "Genre already Exists");			
 		} catch (GenreException e) {
 			System.err.println("Exception in Genre Validator");

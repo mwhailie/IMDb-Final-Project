@@ -7,9 +7,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Insert title here</title>
+		<title>schedule Created Successfully</title>
 	</head>
 	<body>
-	New Genre Added Successfully: ${genre.title}<br>
+	    	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+	    <a href="${contextPath}/admin.htm">Home</a><br/>
+	New schedule Added Successfully: ${schedule}<br>
 	</body>
 </html>

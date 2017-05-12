@@ -4,6 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+	
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="userValidator" class="edu.neu.webtool.validator.UserValidator"></bean>
 	<bean id="userDao" class="edu.neu.webtool.dao.UserDAO" ></bean>
 	
@@ -12,4 +19,13 @@
 	
 	<bean id="movieValidator" class="edu.neu.webtool.validator.MovieValidator"></bean>
 	<bean id="movieDao" class="edu.neu.webtool.dao.MovieDAO" ></bean>
+	
+	<bean id="theaterValidator" class="edu.neu.webtool.validator.TheaterValidator"></bean>
+	<bean id="theaterDao" class="edu.neu.webtool.dao.TheaterDAO" ></bean>
+	
+	<bean id="reviewDao" class="edu.neu.webtool.dao.ReviewDAO" ></bean>
+	<bean id="auditoriumDao" class="edu.neu.webtool.dao.AuditoriumDAO" ></bean>
+		<bean id="scheduleDao" class="edu.neu.webtool.dao.ScheduleDAO" ></bean>
+		<bean id="ticketDao" class="edu.neu.webtool.dao.TicketDAO" ></bean>
+		<bean id="orderDao" class="edu.neu.webtool.dao.OrderDAO" ></bean>
 </beans>

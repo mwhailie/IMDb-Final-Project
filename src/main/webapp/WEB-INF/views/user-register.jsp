@@ -7,57 +7,60 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+div.register{
+	padding: 100px 200px;
+}
+</style>
+<title>Register New User</title>
 </head>
 <body>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 	<a href="${contextPath}">Go Back</a><br/>
-
+	<div class="register">
 	<h2>Register a New User</h2>
-
-	<form:form action="${contextPath}/user/register" commandName="user"
-		method="post">
-
-		<table>
-			<tr>
-				<td>First Name:</td>
-				<td><form:input path="firstName" size="30" required="required" />
-					<font color="red"><form:errors path="firstName" /></font></td>
-			</tr>
-
-			<tr>
-				<td>Last Name:</td>
-				<td><form:input path="lastName" size="30" required="required" />
-					<font color="red"><form:errors path="lastName" /></font></td>
-			</tr>
-
-
-			<tr>
-				<td>User Name:</td>
-				<td><form:input path="username" size="30" required="required" />
-					<font color="red"><form:errors path="username" /></font></td>
-			</tr>
-
-			<tr>
-				<td>Password:</td>
-				<td><form:password path="password" size="30"
-						required="required" /> <font color="red"><form:errors
-							path="password" /></font></td>
-			</tr>
-
-			<tr>
-				<td>Email Id:</td>
-				<td><form:input path="email.emailAddress" size="30"
-						type="email" required="required" /> <font color="red"><form:errors
-							path="email.emailAddress" /></font></td>
-			</tr>
-
-			<tr>
-				<td colspan="2"><input type="submit" value="Register User" /></td>
-			</tr>
-		</table>
-
+	<form:form action="${contextPath}/user/register" commandName="user"	method="post">
+		 <div class="form-group">
+				 <label for="firstname">First Name:</label>
+				<form:input path="firstName" size="30" required="required"  class="form-control" id="firstname" placeholder="firstname" />
+					<font color="red"><form:errors path="firstName" /></font>
+		</div>
+ 		<div class="form-group">
+				<label for="lastname">Last Name:</label>
+				<form:input path="lastName" size="30" required="required" class="form-control" id="lastname" placeholder="lastname"/>
+					<font color="red"><form:errors path="lastName" /></font>
+		</div>
+ 		<div class="form-group">
+				<label for="username">User Name:</label>
+				<form:input path="username" size="30" required="required" class="form-control" id="username" placeholder="username" />
+					<font color="red"><form:errors path="username" /></font>
+		</div>
+		<div class="form-group">
+				<label for="password">Password:</label>
+				<form:password path="password" size="30" required="required" class="form-control" id="password" placeholder="password" /> 
+				<font color="red"><form:errors path="password" /></font>
+		</div>
+ 		<div class="form-group">
+				<label for="email">Email:</label>
+				<form:input path="email.emailAddress" size="30"
+						type="email" required="required" class="form-control" id="email" placeholder="email"/> 
+						<font color="red"><form:errors path="email.emailAddress" /></font>
+		</div>
+		<input  class="btn btn-primary" type="submit" value="Register User" />
 	</form:form>
+	</div>
+
+
+	
 </body>
 </html>

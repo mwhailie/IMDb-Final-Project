@@ -16,5 +16,12 @@
 		<mapping class="edu.neu.webtool.pojo.Email" />
 		<mapping class="edu.neu.webtool.pojo.Movie" />
 		<mapping class="edu.neu.webtool.pojo.Genre" />
+		<mapping class="edu.neu.webtool.pojo.Theater" />
+		<mapping class="edu.neu.webtool.pojo.Review" />
+    	<mapping class="edu.neu.webtool.pojo.Auditorium" />
+     	<mapping class="edu.neu.webtool.pojo.Schedule" />
+     	<mapping class="edu.neu.webtool.pojo.Ticket" />
+     	<mapping class="edu.neu.webtool.pojo.Order" />
+     	
     </session-factory>
 </hibernate-configuration>

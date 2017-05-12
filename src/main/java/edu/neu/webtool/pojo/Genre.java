@@ -3,6 +3,7 @@ package edu.neu.webtool.pojo;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,59 +15,55 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="genre_table")
+@Table(name = "genre_table")
 public class Genre {
-		@Id 
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name="genreID", unique = true, nullable = false)
-	    private long genreId;
-		
-		@Column(name="title", unique=true, nullable = false)
-	    private String title;
-	    
-		@ManyToMany
-	    @JoinTable (
-	       name="genre_movie_table",
-	       joinColumns = {@JoinColumn(name="genreID", nullable = false, updatable = false)},
-	       inverseJoinColumns = {@JoinColumn(name="movieID" )}
-	    )
-		private Set<Movie> movies = new HashSet<Movie>();
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "genreID", unique = true, nullable = false)
+	private long genreId;
 
-	    public Genre(String title) {
-	        this.title = title;
-	    }
+	@Column(name = "title", unique = true, nullable = false)
+	private String title;
 
-	    public Genre() {
-	    }
-	    
+	@ManyToMany(cascade =CascadeType.ALL)
+	@JoinTable(name = "genre_movie_table", 
+	joinColumns = {	@JoinColumn(name = "genreID", nullable = false, updatable = false) }, 
+	inverseJoinColumns = {	@JoinColumn(name = "movieID") })
+	private Set<Movie> movies = new HashSet<Movie>();
 
+	public Genre(String title) {
+		this.title = title;
+	}
 
-		public long getGenreId() {
-			return genreId;
-		}
+	public Genre() {
+	}
 
-		public void setGenreId(long genreId) {
-			this.genreId = genreId;
-		}
+	public long getGenreId() {
+		return genreId;
+	}
 
-		public String getTitle() {
-			return title;
-		}
+	public void setGenreId(long genreId) {
+		this.genreId = genreId;
+	}
 
-		public void setTitle(String title) {
-			this.title = title;
-		}
+	public String getTitle() {
+		return title;
+	}
 
-		public Set<Movie> getMovies() {
-			return movies;
-		}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-		public void setMovies(Set<Movie> movies) {
-			this.movies = movies;
-		}
+	public Set<Movie> getMovies() {
+		return movies;
+	}
 
-		@Override 
-		public String toString(){
-			return title;
-		}
+	public void setMovies(Set<Movie> movies) {
+		this.movies = movies;
+	}
+
+	@Override
+	public String toString() {
+		return title;
+	}
 }
