@@ -2,12 +2,18 @@
 
 ## Prerequisites
 
-* jdk 1.8
+* JDK 1.8
 * Tomcat 8
-* MySQL 
-* Spring 4.1.4.
+* MySQL
+* [Spring MVC](https://spring.io/) and [Hibernate](http://hibernate.org/) - Framework
+* [Maven](https://maven.apache.org/) - Dependency Management
 
-## Deployment
+## Front End
+
+* [jquery](http://jquery.com/) Framework
+* [bootstrap](http://v3.bootcss.com/) 
+
+## Set up
 
 To run this project, please change the following code in applicationContext-database.xml
 
@@ -20,11 +26,9 @@ as your database setting
 
 Then run the following command in your mysql
 ```
-create table final
+create table final;
 ```
 
 ## Built With
 
-* [Spring MVC](https://spring.io/) and [Hibernate](http://hibernate.org/) - Framework
-* [Maven](https://maven.apache.org/) - Dependency Management
 * [sts](https://spring.io/tools/sts) - IDE
