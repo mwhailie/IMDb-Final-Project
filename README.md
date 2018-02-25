@@ -15,7 +15,7 @@
 
 ## Set up
 
-To run this project, please change the following code in applicationContext-database.xml
+To run this project, please change the following code in hibernate.cfg.xml
 
 ```
 <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/final</property>
